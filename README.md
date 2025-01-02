@@ -1,12 +1,12 @@
 # javahaters
 
 ## Team Members
-- n0man-ch0wdhury (Team Leader)
-- Zahid-Hasan-Mozumder
-- sakibnz
+- [Noman Chowdhury Munna (Team Leader)](https://github.com/n0man-ch0wdhury)
+- [Zahid Hasan Mozumder](https://github.com/Zahid-Hasan-Mozumder)
+- [Nazmus Sakib](https://github.com/sakibnz)
 
 ## Mentor
-- Noman5237
+- [Md. Abdullah Al Noman](https://github.com/Noman5237)
 
 ## Project Description
 <!-- Add your project description here. -->
