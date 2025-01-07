@@ -116,7 +116,7 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 
 ### Challenge 13: Lack of Automated Medicine Refill for Chronic Conditions
 **Who**: I am a patient managing a chronic disease.<br>
-**Who**: I want a subscription service for automatic medicine refills.<br>
+**What**: I want a subscription service for automatic medicine refills.<br>
 **When**: On a monthly or customized schedule.<br>
 **Where**: Using the online platform for recurring orders.<br>
 **Why**: Because it ensures I never run out of critical medicines for my condition.
@@ -124,8 +124,20 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 ---
 
 ### Challenge 14: Procuring Medical Equipment for Rural Clinics
-**Who**: I am a doctor running a medical clinic in a rural area of Bangladesh.
-**Who**: I face difficulties in acquiring necessary medical equipment for my clinic, such as diagnostic tools or patient monitoring devices.
-**When**: When I need to enhance the quality of care for my patients or manage emergencies effectively.
-**Where**: In my rural clinic, where suppliers are scarce, and delivery options are limited.
-**Why**: Because access to reliable suppliers and affordable medical equipment is challenging in rural areas, affecting the quality of healthcare I can provide.
+**Who**: I am a doctor running a medical clinic in a rural area of Bangladesh.<br>
+**What**: I face difficulties in acquiring necessary medical equipment for my clinic, such as diagnostic tools or patient monitoring devices.<br>
+**When**: When I need to enhance the quality of care for my patients or manage emergencies effectively.<br>
+**Where**: In my rural clinic, where suppliers are scarce, and delivery options are limited.<br>
+**Why**: Because access to reliable suppliers and affordable medical equipment is challenging in rural areas, affecting the quality of healthcare I can provide.<br>
+
+---
+
+### Challenge 15: Finding Medical Equipment for Home Use
+**Who**: I am a patient. <br>
+**What**: I struggle to find medical equipment like wheelchairs, glucometers, or oxygen cylinders for my home care needs.<br>
+**When**: When a family member or I require ongoing treatment or recovery support at home.<br>
+**Where**: In my village, where medical equipment is unavailable, and traveling to the city is costly and time-consuming.<br>
+**Why**: Because local medical facilities or stores do not stock essential equipment, and I have no convenient way to purchase them.<br>
+
+---
+
