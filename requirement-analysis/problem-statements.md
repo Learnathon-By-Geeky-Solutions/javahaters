@@ -93,3 +93,25 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 **When**: When I need gynecological consultations or reproductive health advice.  
 **Where**: At clinics where patient privacy is not strictly maintained.  
 **Why**: Because healthcare providers may not prioritize creating a secure and confidential environment.  
+
+---
+### Challenge 11: Unable to Buy Medicine inperson
+Who: I am an elderly patient or someone with lack of time to buy medicine in person.
+What: I want medicines delivered directly to my doorstep.
+When: When I place an order through the platform.
+Where: At home, especially in areas with limited pharmacy access.
+Why: Because traveling to pharmacies is inconvenient or not feasible for me.
+
+### Challenge 12: Limited Access to Rare Medicines in Rural Areas
+Who: I am a person living in a rural or village area of Bangladesh.
+What: I want to order rare medicines that are not available in nearby shops.
+When: When I or my family members need specific medicines for a rare condition.
+Where: In my village, where local pharmacies have limited stock.
+Why: Because traveling to urban areas for rare medicines is time-consuming, expensive, and inconvenient.
+
+### Challenge 13: Lack of Automated Medicine Refill for Chronic Conditions
+Who: I am a patient managing a chronic disease.
+What: I want a subscription service for automatic medicine refills.
+When: On a monthly or customized schedule.
+Where: Using the online platform for recurring orders.
+Why: Because it ensures I never run out of critical medicines for my condition.
