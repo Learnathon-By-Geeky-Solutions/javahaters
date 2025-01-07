@@ -151,11 +151,11 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 ---
 
 ### Challenge 17: Uncertainty in Choosing the Right Specialist Doctor
-**Who**: I am a person experiencing health issues and seeking medical advice.
-**What**: I often feel confused about which specialist doctor to consult based on my symptoms.
-**When**: When I or my family members experience health problems, especially unfamiliar or complex ones.
-**Where**: In both rural and urban areas, where access to immediate medical guidance is limited.
-**Why**: Because as a general person, I lack medical knowledge to identify the right specialist, leading to delays in proper treatment or unnecessary visits to the wrong doctors.
+**Who**: I am a person experiencing health issues and seeking medical advice.<br>
+**What**: I often feel confused about which specialist doctor to consult based on my symptoms.<br>
+**When**: When I or my family members experience health problems, especially unfamiliar or complex ones.<br>
+**Where**: In both rural and urban areas, where access to immediate medical guidance is limited.<br>
+**Why**: Because as a general person, I lack medical knowledge to identify the right specialist, leading to delays in proper treatment or unnecessary visits to the wrong doctors.<br>
 
 ---
 
