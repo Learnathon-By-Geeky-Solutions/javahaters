@@ -97,28 +97,28 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 ---
 
 ### Challenge 11: Unable to Buy Medicine inperson
-**Who**: I am an elderly patient or someone with lack of time to buy medicine in person.
-**What**: I want medicines delivered directly to my doorstep.
-**When**: When I place an order through the platform.
-**Where**: At home, especially in areas with limited pharmacy access.
+**Who**: I am an elderly patient or someone with lack of time to buy medicine in person.<br>
+**What**: I want medicines delivered directly to my doorstep.<br>
+**When**: When I place an order through the platform.<br>
+**Where**: At home, especially in areas with limited pharmacy access.<br>
 **Why**: Because traveling to pharmacies is inconvenient or not feasible for me.
 
 ---
 
 ### Challenge 12: Limited Access to Rare Medicines in Rural Areas
-**Who**: I am a person living in a rural or village area of Bangladesh.
-**What**: I want to order rare medicines that are not available in nearby shops.
-**When**: When I or my family members need specific medicines for a rare condition.
-**Where**: In my village, where local pharmacies have limited stock.
+**Who**: I am a person living in a rural or village area of Bangladesh.<br>
+**What**: I want to order rare medicines that are not available in nearby shops.<br>
+**When**: When I or my family members need specific medicines for a rare condition.<br>
+**Where**: In my village, where local pharmacies have limited stock.<br>
 **Why**: Because traveling to urban areas for rare medicines is time-consuming, expensive, and inconvenient.
 
 ---
 
 ### Challenge 13: Lack of Automated Medicine Refill for Chronic Conditions
-**Who**: I am a patient managing a chronic disease.
-**What**: I want a subscription service for automatic medicine refills.
-**When**: On a monthly or customized schedule.
-**Where**: Using the online platform for recurring orders.
+**Who**: I am a patient managing a chronic disease.<br>
+**What**: I want a subscription service for automatic medicine refills.<br>
+**When**: On a monthly or customized schedule.<br>
+**Where**: Using the online platform for recurring orders.<br>
 **Why**: Because it ensures I never run out of critical medicines for my condition.
 
 ---
