@@ -141,3 +141,12 @@ Healthcare access in Bangladesh faces numerous challenges, deeply rooted in infr
 
 ---
 
+### Challenge 16: Difficulty in Finding Reliable Nursing Services
+**Who**: I am a family member of a sick or elderly person in need of care.<br>
+**What**: I face challenges in finding a qualified and reliable nurse to take care of my loved one at home.<br>
+**When**: When my family member is recovering from surgery, suffering from a chronic illness, or requires daily assistance.<br>
+**Where**: At my home, where professional care is essential to ensure proper treatment and comfort.<br>
+**Why**: Because searching for nurses in person often leads to limited options, unreliable service quality, and lack of proper credentials, making it hard to trust the care provided.<br>
+
+---
+
