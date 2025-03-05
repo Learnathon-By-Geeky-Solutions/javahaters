@@ -8,6 +8,10 @@ public class MedtohealApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MedtohealApplication.class, args);
+
+		System.out.println("Hello World");
+
+
 	}
 
 }
