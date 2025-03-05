@@ -22,6 +22,14 @@ public class DoctorController {
         return ResponseEntity.ok(doctors);
     }
 
+
+    // Get a doctor by id
+    @GetMapping("/{id}") // ✅ Get doctor by ID
+    public ResponseEntity<Doctor> getDoctorById(@PathVariable Long id) {
+        Doctor doctor = doctorService.getDoctorById(id);
+        return ResponseEntity.ok(doctor);
+    }
+
     // Search doctors by name or specialtyId (updated to specialtyId), and sort by experience
     @GetMapping("/search")
     public ResponseEntity<List<Doctor>> searchDoctors(
@@ -31,7 +39,7 @@ public class DoctorController {
 
         if (name != null && specialtyId != null) {
             // Search by name and specialtyId
-            return ResponseEntity.ok(doctorService.searchDoctorsByNameAndSpecialty(name, specialtyId));
+            return ResponseEntity.ok(doctorService.searchDoctorsByNameAndSpecialty(name, Long.valueOf(specialtyId)));
         } else if (name != null && "experience".equalsIgnoreCase(sortBy)) {
             // Search by name and sort by experience
             return ResponseEntity.ok(doctorService.searchDoctorsByNameAndSortByExperience(name));
@@ -40,7 +48,7 @@ public class DoctorController {
             return ResponseEntity.ok(doctorService.searchDoctorsByName(name));
         } else if (specialtyId != null) {
             // Search by specialtyId
-            return ResponseEntity.ok(doctorService.searchDoctorsBySpecialty(specialtyId));
+            return ResponseEntity.ok(doctorService.searchDoctorsBySpecialty(Long.valueOf(specialtyId)));
         } else {
             // Return all doctors if no search parameters are provided
             return ResponseEntity.ok(doctorService.getAllDoctors());
