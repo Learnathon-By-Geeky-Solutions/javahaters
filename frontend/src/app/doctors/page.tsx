@@ -1,8 +1,8 @@
-// src/app/search-doctor/page.tsx
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '@/components/Navbar/Navbar'
+import Link from 'next/link'  // Add this import for navigation
 
 type Doctor = {
   id: string
@@ -10,57 +10,104 @@ type Doctor = {
   specialty: string
   hospital: string
   rating: number
-  price: number
+  visit_fee: number
   online: boolean
 }
 
-const mockDoctors: Doctor[] = [
-  {
-    id: 'DOC-001',
-    name: 'Dr. Alice Smith',
-    specialty: 'Cardiology',
-    hospital: 'City Hospital',
-    rating: 4.8,
-    price: 150,
-    online: true
-  },
-  {
-    id: 'DOC-002',
-    name: 'Dr. Bob Johnson',
-    specialty: 'Dermatology',
-    hospital: 'Metro Clinic',
-    rating: 4.5,
-    price: 120,
-    online: false
-  },
-  // Add more mock doctors here
-]
-
 export default function SearchDoctorPage() {
+  const [doctors, setDoctors] = useState<Doctor[]>([])  // Default is empty array
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [specialties, setSpecialties] = useState<string[]>([]) // State to store specialties
+  
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('all')
   const [sortBy, setSortBy] = useState('rating')
 
-  const filteredDoctors = mockDoctors
+  // Fetch doctors from API
+  useEffect(() => {
+    async function fetchDoctors() {
+      try {
+        setIsLoading(true)
+        const response = await fetch('http://localhost:8080/api/doctors?page=1&size=10', {
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch doctors')
+        }
+
+        const data = await response.json()
+        setDoctors(data)
+        
+        // Extract unique specialties from the fetched doctors data
+        const uniqueSpecialties = [
+          ...new Set(data.map((doctor: Doctor) => doctor.specialty))
+        ]
+        setSpecialties(uniqueSpecialties)
+        
+        setError(null)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An unknown error occurred')
+        setDoctors([]) // Ensure doctors is an empty array on error
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchDoctors()
+  }, [])
+
+  // Ensure `doctors` is always an array before using .filter()
+  const filteredDoctors = (doctors || [])
     .filter(doctor => {
-      const matchesSearch = doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        doctor.hospital.toLowerCase().includes(searchQuery.toLowerCase())
+      const matchesSearch = 
+        (doctor.name?.toLowerCase() || '').includes(searchQuery.toLowerCase()) ||
+        (doctor.hospital?.toLowerCase() || '').includes(searchQuery.toLowerCase())
       const matchesSpecialty = selectedSpecialty === 'all' || 
-        doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase()
+        (doctor.specialty?.toLowerCase() || '') === selectedSpecialty.toLowerCase()
       return matchesSearch && matchesSpecialty
     })
     .sort((a, b) => {
       if (sortBy === 'rating') return b.rating - a.rating
-      if (sortBy === 'price') return a.price - b.price
-      return a.name.localeCompare(b.name)
+      if (sortBy === 'visit_fee') return a.visit_fee - b.visit_fee
+      return a.name?.localeCompare(b.name || '') || 0
     })
+
+  // Render loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading doctors...</div>
+      </div>
+    )
+  }
+
+  // Render error state
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-red-500 text-xl">
+          Error: {error}
+          <button 
+            onClick={() => window.location.reload()} 
+            className="ml-4 px-4 py-2 bg-primary text-white rounded"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen">
       <Navbar />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        {/* Search and Filter Section */}
+        {/* Search and Filter Section (Same as before) */}
         <div className="mb-8 space-y-4">
           {/* Search Bar */}
           <div className="relative">
@@ -82,9 +129,11 @@ export default function SearchDoctorPage() {
               onChange={(e) => setSelectedSpecialty(e.target.value)}
             >
               <option value="all">All Specialties</option>
-              <option value="Cardiology">Cardiology</option>
-              <option value="Dermatology">Dermatology</option>
-              {/* Add more specialties */}
+              {specialties.map((specialty, index) => (
+                <option key={index} value={specialty}>
+                  {specialty}
+                </option>
+              ))}
             </select>
 
             <select
@@ -93,7 +142,7 @@ export default function SearchDoctorPage() {
               onChange={(e) => setSortBy(e.target.value)}
             >
               <option value="rating">Sort by Rating</option>
-              <option value="price">Sort by Price</option>
+              <option value="visit_fee">Sort by visit_fee</option>
               <option value="name">Sort by Name</option>
             </select>
           </div>
@@ -102,7 +151,7 @@ export default function SearchDoctorPage() {
         {/* Doctors List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredDoctors.map((doctor) => (
-            <div key={doctor.id} className="bg-white rounded-lg shadow-sm p-6">
+            <div key={doctor.id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between">
                 <div>
                   <h3 className="text-lg font-semibold">{doctor.name}</h3>
@@ -117,7 +166,16 @@ export default function SearchDoctorPage() {
                   <StarIcon className="h-5 w-5 text-yellow-400" />
                   <span className="ml-1">{doctor.rating}</span>
                 </div>
-                <span className="text-primary font-semibold">${doctor.price}</span>
+                <span className="text-primary font-semibold">${doctor.visit_fee}</span>
+              </div>
+              
+              <div className="mt-4">
+                <Link 
+                  href={`/doctors/${doctor.id}`}
+                  className="block w-full text-center py-2 px-4 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors"
+                >
+                  View Profile
+                </Link>
               </div>
             </div>
           ))}
@@ -134,7 +192,7 @@ export default function SearchDoctorPage() {
   )
 }
 
-// Add these icons to your imports
+// Icons remain the same as in the original file
 const MagnifyingGlassIcon = ({ ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
