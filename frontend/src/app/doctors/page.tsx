@@ -10,7 +10,7 @@ type Doctor = {
   specialty: string
   hospital: string
   rating: number
-  visit_fee: number
+  visitFee: number
   online: boolean
 }
 
@@ -72,15 +72,15 @@ export default function SearchDoctorPage() {
     })
     .sort((a, b) => {
       if (sortBy === 'rating') return b.rating - a.rating
-      if (sortBy === 'visit_fee') return a.visit_fee - b.visit_fee
+      if (sortBy === 'visitFee') return a.visitFee - b.visitFee
       return a.name?.localeCompare(b.name || '') || 0
     })
 
   // Render loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-xl">Loading doctors...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-xl text-gray-700 bg-white p-8 rounded-lg shadow-sm">Loading doctors...</div>
       </div>
     )
   }
@@ -88,12 +88,12 @@ export default function SearchDoctorPage() {
   // Render error state
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-red-500 text-xl">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-red-600 text-xl bg-white p-8 rounded-lg shadow-sm">
           Error: {error}
           <button 
             onClick={() => window.location.reload()} 
-            className="ml-4 px-4 py-2 bg-primary text-white rounded"
+            className="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
           >
             Retry
           </button>
@@ -103,7 +103,7 @@ export default function SearchDoctorPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
@@ -142,7 +142,7 @@ export default function SearchDoctorPage() {
               onChange={(e) => setSortBy(e.target.value)}
             >
               <option value="rating">Sort by Rating</option>
-              <option value="visit_fee">Sort by visit_fee</option>
+              <option value="visitFee">Sort by visitFee</option>
               <option value="name">Sort by Name</option>
             </select>
           </div>
@@ -166,7 +166,7 @@ export default function SearchDoctorPage() {
                   <StarIcon className="h-5 w-5 text-yellow-400" />
                   <span className="ml-1">{doctor.rating}</span>
                 </div>
-                <span className="text-primary font-semibold">${doctor.visit_fee}</span>
+                <span className="text-primary font-semibold">${doctor.visitFee}</span>
               </div>
               
               <div className="mt-4">

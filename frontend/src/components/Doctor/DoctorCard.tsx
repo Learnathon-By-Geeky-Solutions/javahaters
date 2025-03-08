@@ -5,7 +5,7 @@ interface DoctorCardProps {
       specialty: string;
       hospital: string;
       rating: number;
-      visit_fee: string;
+      visitFee: string;
       online: boolean;
     };
   }
@@ -17,7 +17,7 @@ interface DoctorCardProps {
         <p className="text-sm text-gray-600">{doctor.specialty}</p>
         <p className="text-sm text-gray-500">{doctor.hospital}</p>
         <p className="text-sm text-gray-500">{doctor.rating} stars</p>
-        <p className="text-sm text-gray-500">{doctor.price}</p>
+        <p className="text-sm text-gray-500">{doctor.visitFee}</p>
         <p className="text-sm text-gray-500">{doctor.online ? 'Online' : 'Offline'}</p>
       </div>
     );

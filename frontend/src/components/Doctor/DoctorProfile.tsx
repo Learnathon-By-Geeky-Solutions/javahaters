@@ -8,7 +8,7 @@ interface Doctor {
   area_id?: string;
   hospital_id?: string;
   hospital?: string;
-  visit_fee?: number;
+  visitFee?: number;
   available_hours?: string;
   degree?: string;
   experience?: string;
@@ -75,7 +75,7 @@ export default function DoctorProfile({ doctor }: { doctor: Doctor }) {
                 </div>
                 <div className="flex items-center gap-2">
                   <CurrencyDollarIcon className="h-5 w-5 text-green-500" />
-                  <span>Visit Fee: ${doctor.visit_fee || "N/A"}</span>
+                  <span>Visit Fee: ${doctor.visitFee || "N/A"}</span>
                 </div>
               </div>
             </div>
